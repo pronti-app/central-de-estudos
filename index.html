@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#080e1c">
+    <title>Study Hub | Seu espaço de estudos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <div class="brand-icon">S</div>
+            <div>
+                <h2>STUDY<span>HUB</span></h2>
+                <small>Seu espaço de estudos</small>
+            </div>
+        </div>
+
+        <div class="menu-label">MENU PRINCIPAL</div>
+
+        <nav class="navigation">
+            <button class="nav-item active" data-page="inicio">
+                <span>⌂</span> Início
+            </button>
+
+            <button class="nav-item" data-page="materias">
+                <span>▤</span> Minhas matérias
+            </button>
+
+            <button class="nav-item" data-page="materiais">
+                <span>▧</span> Meus materiais
+            </button>
+
+            <button class="nav-item" data-page="provas">
+                <span>▦</span> Semana de provas
+            </button>
+
+            <button class="nav-item" data-page="videoaulas">
+                <span>▷</span> Videoaulas
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+            <div class="sidebar-tip">
+                <span>✦</span>
+                <h4>Um passo de cada vez!</h4>
+                <p>Seu futuro começa com o que você aprende hoje.</p>
+            </div>
+            <button class="nav-item" data-page="perfil">
+                <span>⚙</span> Meu perfil
+            </button>
+        </div>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="main-content">
+
+        <header class="topbar">
+            <button class="mobile-menu" id="mobileMenu">☰</button>
+            <div>
+                <span class="top-subtitle">SEU AMBIENTE DE APRENDIZAGEM</span>
+                <h3 id="pageTitle">Início</h3>
+            </div>
+            <div class="top-user">
+                <div class="avatar" id="userAvatar">S</div>
+                <span id="topUserName">Estudante</span>
+            </div>
+        </header>
+
+        <!-- INÍCIO -->
+        <section class="page active" id="inicio">
+
+            <div class="welcome-banner">
+                <div>
+                    <span class="tag">SEU ESPAÇO DE APRENDIZAGEM</span>
+                    <h1>Olá, <span id="welcomeName">estudante</span>! 💙</h1>
+                    <p>Organize seus estudos, acompanhe seu progresso e conquiste seus objetivos.</p>
+                    <button class="primary-button" data-go="provas">
+                        Organizar meus estudos →
+                    </button>
+                </div>
+                <div class="banner-decoration">✦</div>
+            </div>
+
+            <div class="section-heading">
+                <div>
+                    <h2>Seu painel</h2>
+                    <p>Um resumo da sua vida escolar.</p>
+                </div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">▤</div>
+                    <span>Matérias</span>
+                    <strong id="statSubjects">0</strong>
+                    <small>Matérias cadastradas</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">▧</div>
+                    <span>Materiais</span>
+                    <strong id="statFiles">0</strong>
+                    <small>Arquivos salvos</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">▦</div>
+                    <span>Provas</span>
+                    <strong id="statExams">0</strong>
+                    <small>Provas cadastradas</small>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">✓</div>
+                    <span>Concluídas</span>
+                    <strong id="statTasks">0</strong>
+                    <small>Tarefas finalizadas</small>
+                </div>
+            </div>
+
+            <div class="dashboard-grid">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Minha rotina</h3>
+                            <p>O que você precisa estudar.</p>
+                        </div>
+                        <button class="text-button" data-go="provas">Ver tudo →</button>
+                    </div>
+                    <div id="todayTasks" class="task-list">
+                        <div class="empty-state">Seu planejamento aparecerá aqui.</div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-heading">
+                        <div>
+                            <h3>Próximas provas</h3>
+                            <p>Fique de olho nas datas.</p>
+                        </div>
+                    </div>
+                    <div id="nextExams" class="exam-list">
+                        <div class="empty-state">Nenhuma prova cadastrada.</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel quick-panel">
+                <h3>Acesso rápido</h3>
+                <div class="quick-grid">
+                    <button data-go="materias">＋ Adicionar matéria</button>
+                    <button data-go="materiais">＋ Enviar material</button>
+                    <button data-go="provas">＋ Cadastrar prova</button>
+                    <button data-go="videoaulas">▷ Encontrar videoaulas</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- MATÉRIAS -->
+        <section class="page" id="materias">
+            <div class="section-heading">
+                <div>
+                    <h2>Minhas matérias</h2>
+                    <p>Organize tudo o que você aprende na escola.</p>
+                </div>
+            </div>
+
+            <div class="panel form-panel">
+                <h3>Adicionar nova matéria</h3>
+                <form id="subjectForm">
+                    <div class="form-grid">
+                        <div>
+                            <label for="subjectName">Nome da matéria</label>
+                            <input id="subjectName" required placeholder="Ex.: Matemática">
+                        </div>
+                        <div>
+                            <label for="subjectTeacher">Professor (opcional)</label>
+                            <input id="subjectTeacher" placeholder="Nome do professor">
+                        </div>
+                    </div>
+                    <button class="primary-button" type="submit">＋ Adicionar matéria</button>
+                </form>
+            </div>
+
+            <div class="section-heading">
+                <h2>Suas disciplinas</h2>
+            </div>
+            <div id="subjectsList" class="subjects-grid"></div>
+        </section>
+
+        <!-- MATERIAIS -->
+        <section class="page" id="materiais">
+            <div class="section-heading">
+                <div>
+                    <h2>Meus materiais</h2>
+                    <p>Guarde suas fotos, PDFs, livros e anotações em um só lugar.</p>
+                </div>
+            </div>
+
+            <div class="panel form-panel">
+                <h3>Adicionar material</h3>
+                <p class="muted">Envie fotos do quadro, páginas de livros, cadernos ou arquivos PDF.</p>
+
+                <form id="fileForm">
+                    <label for="fileSubject">Matéria relacionada</label>
+                    <select id="fileSubject">
+                        <option value="">Sem matéria específica</option>
+                    </select>
+
+                    <label for="fileDescription">Nome ou descrição do material</label>
+                    <input id="fileDescription" placeholder="Ex.: Revisão de Física">
+
+                    <label class="upload-area" for="fileInput">
+                        <span class="upload-icon">⇧</span>
+                        <strong>Clique para selecionar seus arquivos</strong>
+                        <span>Fotos e PDFs • Máximo de 15 MB por arquivo</span>
+                        <input type="file" id="fileInput" accept="image/*,.pdf" multiple hidden>
+                    </label>
+
+                    <div id="selectedFiles" class="selected-files"></div>
+                    <button class="primary-button" type="submit">Salvar materiais</button>
+                </form>
+            </div>
+
+            <div class="section-heading">
+                <h2>Arquivos salvos</h2>
+            </div>
+            <div id="materialsList" class="materials-grid"></div>
+        </section>
+
+        <!-- PROVAS -->
+        <section class="page" id="provas">
+            <div class="section-heading">
+                <div>
+                    <h2>Semana de provas</h2>
+                    <p>Cadastre suas avaliações e organize sua preparação.</p>
+                </div>
+            </div>
+
+            <div class="panel form-panel">
+                <h3>Cadastrar uma prova</h3>
+
+                <form id="examForm">
+                    <div class="form-grid">
+                        <div>
+                            <label for="examSubject">Matéria</label>
+                            <select id="examSubject" required>
+                                <option value="">Selecione uma matéria</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="examDate">Data da prova</label>
+                            <input type="date" id="examDate" required>
+                        </div>
+                    </div>
+
+                    <label for="examTopics">Conteúdos que vão cair</label>
+                    <textarea id="examTopics" rows="4" required placeholder="Ex.: Cinemática, velocidade média, movimento uniforme..."></textarea>
+
+                    <button type="submit" class="primary-button">＋ Cadastrar prova</button>
+                </form>
+            </div>
+
+            <div class="panel planner-panel">
+                <div class="panel-heading">
+                    <div>
+                        <h3>Planejamento inteligente</h3>
+                        <p>Organize sua rotina a partir das datas das provas.</p>
+                    </div>
+                    <span class="planner-icon">✧</span>
+                </div>
+
+                <label for="dailyMinutes">Tempo disponível por dia</label>
+                <select id="dailyMinutes">
+                    <option value="60">1 hora</option>
+                    <option value="90" selected>1 hora e 30 minutos</option>
+                    <option value="120">2 horas</option>
+                    <option value="180">3 horas</option>
+                    <option value="240">4 horas</option>
+                </select>
+
+                <button class="primary-button" id="generatePlan" type="button">
+                    ✧ Montar meu cronograma
+                </button>
+
+                <div id="planResult"></div>
+            </div>
+
+            <div class="section-heading">
+                <h2>Provas cadastradas</h2>
+            </div>
+            <div id="examsList" class="exam-cards"></div>
+        </section>
+
+        <!-- VIDEOAULAS -->
+        <section class="page" id="videoaulas">
+            <div class="section-heading">
+                <div>
+                    <h2>Central de videoaulas</h2>
+                    <p>Encontre explicações e conteúdos para complementar seus estudos.</p>
+                </div>
+            </div>
+
+            <div class="panel form-panel">
+                <h3>Pesquisar videoaulas</h3>
+
+                <form id="videoForm">
+                    <label for="videoSubject">Matéria</label>
+                    <select id="videoSubject">
+                        <option value="">Escolha uma matéria</option>
+                    </select>
+
+                    <label for="videoTopic">Qual assunto você quer aprender?</label>
+                    <input id="videoTopic" required placeholder="Ex.: Leis de Newton">
+
+                    <button class="primary-button" type="submit">▷ Pesquisar videoaulas</button>
+                </form>
+            </div>
+
+            <div id="videoResults" class="video-results"></div>
+
+            <div class="panel">
+                <h3>Onde estudar?</h3>
+                <div class="resource-links">
+                    <a href="https://www.youtube.com/" target="_blank" rel="noopener">YouTube</a>
+                    <a href="https://www.khanacademy.org/" target="_blank" rel="noopener">Khan Academy</a>
+                    <a href="https://www.todamateria.com.br/" target="_blank" rel="noopener">Toda Matéria</a>
+                    <a href="https://brasilescola.uol.com.br/" target="_blank" rel="noopener">Brasil Escola</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ASSISTENTE IA -->
+        <section class="page" id="assistente">
+            <div class="section-heading">
+                <div>
+                    <h2>Assistente inteligente</h2>
+                    <p>Seu espaço para tirar dúvidas e aprender.</p>
+                </div>
+            </div>
+
+            <div class="ai-banner">
+                <div class="ai-symbol">✧</div>
+                <h2>Seu assistente de estudos</h2>
+                <p>Prepare uma dúvida, peça uma explicação ou solicite ajuda com seus conteúdos.</p>
+            </div>
+
+            <div class="panel form-panel">
+                <form id="aiForm">
+                    <label for="aiSubject">Matéria</label>
+                    <select id="aiSubject">
+                        <option value="">Geral</option>
+                    </select>
+
+                    <label for="aiQuestion">O que você gostaria de aprender?</label>
+                    <textarea id="aiQuestion" rows="5" required placeholder="Ex.: Explique movimento uniforme de uma maneira simples, com exemplos e exercícios..."></textarea>
+
+                    <button type="submit" class="primary-button">✧ Enviar pergunta</button>
+                </form>
+
+                <div id="aiResponse" class="ai-response"></div>
+            </div>
+
+            <div class="panel integration-notice">
+                <span>ⓘ</span>
+                <div>
+                    <strong>Integração de inteligência artificial</strong>
+                    <p>A conexão com o serviço de IA será ativada quando configurarmos o servidor e a chave de API. Suas perguntas ainda não são enviadas para uma IA nesta versão.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PERFIL -->
+        <section class="page" id="perfil">
+            <div class="section-heading">
+                <div>
+                    <h2>Meu perfil escolar</h2>
+                    <p>Configure seu ambiente de estudos.</p>
+                </div>
+            </div>
+
+            <div class="panel form-panel">
+                <form id="profileForm">
+                    <label for="profileName">Seu nome</label>
+                    <input id="profileName" placeholder="Como podemos te chamar?" required>
+
+                    <label for="profileSchool">Sua escola</label>
+                    <input id="profileSchool" placeholder="Nome da escola">
+
+                    <label for="profileGrade">Série / Ano escolar</label>
+                    <select id="profileGrade">
+                        <option value="">Selecione sua série</option>
+                        <option>6º ano do Ensino Fundamental</option>
+                        <option>7º ano do Ensino Fundamental</option>
+                        <option>8º ano do Ensino Fundamental</option>
+                        <option>9º ano do Ensino Fundamental</option>
+                        <option>1º ano do Ensino Médio</option>
+                        <option>2º ano do Ensino Médio</option>
+                        <option>3º ano do Ensino Médio</option>
+                        <option>Curso técnico</option>
+                        <option>Outro</option>
+                    </select>
+
+                    <button type="submit" class="primary-button">Salvar meu perfil</button>
+                </form>
+            </div>
+        </section>
+
+        <footer>
+            <p>STUDY HUB © 2026 • Seu futuro começa pelo conhecimento. 💙</p>
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
